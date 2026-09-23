@@ -99,3 +99,72 @@ void sendSMS(String latitude, String longitude) {
   }
 }
 ```
+# 🪖 Smart Helmet – Accident Detection & Emergency Alert System
+
+An IoT-based Smart Helmet system designed to detect accidents using an MPU6050 accelerometer, obtain the rider's location using a GPS module, and automatically send an emergency SMS containing the accident location using the Twilio API.
+
+---
+
+## 📌 Overview
+
+The Smart Helmet is an embedded IoT-based safety system built using an ESP32.
+
+The system continuously monitors the acceleration of the helmet using an MPU6050 sensor. When a sudden impact is detected and the acceleration exceeds a predefined threshold, the system considers it a potential accident.
+
+After accident detection:
+
+1. The ESP32 detects the impact using MPU6050.
+2. GPS coordinates are obtained using a GPS module.
+3. The ESP32 connects to the internet through Wi-Fi.
+4. The GPS coordinates are converted into a Google Maps location link.
+5. Twilio API is used to send an emergency SMS.
+6. The emergency contact receives the accident location.
+
+---
+
+## ✨ Features
+
+- 🚨 Automatic accident detection
+- 📈 Real-time acceleration monitoring
+- 📍 GPS-based location tracking
+- 🌐 ESP32 Wi-Fi connectivity
+- 📱 Automatic emergency SMS
+- 🗺️ Google Maps location link
+- ☁️ Twilio API integration
+- 🔌 Low-cost embedded system
+- ⚡ ESP32-based implementation
+
+---
+
+## 🛠️ Hardware Requirements
+
+| Component | Quantity | Purpose |
+|-----------|----------|---------|
+| ESP32 Development Board | 1 | Main microcontroller |
+| MPU6050 | 1 | Accelerometer and gyroscope |
+| GPS Module | 1 | Location tracking |
+| Helmet | 1 | System platform |
+| Jumper Wires | As required | Connections |
+| Power Supply | 1 | Powering the system |
+
+---
+
+## 💻 Software Requirements
+
+- Arduino IDE
+- ESP32 Board Package
+- C/C++ / Arduino Framework
+- Twilio Account
+- Wi-Fi Network
+
+---
+
+## 📚 Libraries Used
+
+```cpp
+#include <Wire.h>
+#include <MPU6050.h>
+#include <TinyGPS++.h>
+#include <WiFi.h>
+#include <HTTPClient.h>
+
